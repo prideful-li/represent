@@ -27,23 +27,19 @@ const canvasStyle = computed(() => {
       height: `${props.settings.height}px`,
       width: `${props.settings.width}px`,
     }
-  } else if (props.settings.height > props.settings.width) {
-    
-
+  } else if (props.settings.height > containerHeight.value) {
     return {
       background: '#000',
-      height: `0px`,
-      width: `0px`
+      height: `${containerHeight.value}px`,
+      width: `${props.settings.width * containerHeight.value / props.settings.height}px`
     }
   }
 
-
-    return {
-      background: '#000',
-      height: `0px`,
-      width: `0px`
-    }
-
+  return {
+    background: '#000',
+    height: `${props.settings.height * containerWidth.value / props.settings.width}px`,
+    width: `${containerWidth.value}px`
+  }
 })
 </script>
 
