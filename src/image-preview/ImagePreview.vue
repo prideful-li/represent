@@ -23,6 +23,7 @@ const container = ref(null)
 const height = ref(0)
 const width = ref(0)
 const resizeObserver = reactive(new ResizeObserver(() => {
+  if (!container.value) return
   height.value = container.value.clientHeight
   width.value = container.value.clientWidth
 }))
@@ -30,10 +31,10 @@ watch(container, (newContainer) => {
   resizeObserver.observe(newContainer)
 })
 
+// Handles sizing of the canvas
 const canvasStyle = computed(() => {
   if (props.settings.height <= height.value && props.settings.width <= width.value) {
     return {
-      background: '#000',
       height: `${props.settings.height}px`,
       width: `${props.settings.width}px`,
     }
@@ -44,7 +45,6 @@ const canvasStyle = computed(() => {
   const bestRatio = Math.min(widthRatio, heightRatio)
 
   return {
-    background: '#000',
     height: `${props.settings.height * bestRatio}px`,
     width: `${props.settings.width * bestRatio}px`
   }
@@ -53,6 +53,7 @@ const canvasStyle = computed(() => {
 const canvas = ref(null)
 let context = ref(null)
 
+// Main rendering routine.
 function renderPreview(settings) {
   if (!context.value) return
 
@@ -83,12 +84,20 @@ function renderPreview(settings) {
   context.value.restore()
 }
 
+// Render on canvas resize.
+const canvasResizeObserver = reactive(new ResizeObserver(() => {
+  if (!canvas.value) return
+  renderPreview(props.settings)
+}))
+
+// Get the context, register observer, and emit canvas to parent.
 watch(canvas, (newCanvas) => {
   context.value = newCanvas.getContext('2d')
-  renderPreview(props.settings)
+  canvasResizeObserver.observe(newCanvas)
   emit('ready', newCanvas)
 })
 
+// Render on setting changed.
 watch(props.settings, (newSettings) => {
   renderPreview(newSettings)
 })
@@ -105,6 +114,7 @@ watch(props.settings, (newSettings) => {
 }
 
 .container canvas {
+  background: #000;
   box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.5);
 }
 </style>
