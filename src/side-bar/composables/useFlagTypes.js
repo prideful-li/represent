@@ -156,6 +156,19 @@ export default function useFlagTypes() {
       bars: ['#FF77A5', '#F5F5F5', '#C009D8', '#232323', '#2C39BF'],
     },
     {
+      id: 'genderfae',
+      label: 'Genderfae',
+      bars: [
+        '#95C4A4',
+        '#C2DEAE',
+        '#F9FACE',
+        '#FFF',
+        '#FCA2C5',
+        '#DB8AE3',
+        '#AB7EDD'
+      ],
+    },
+    {
       id: 'genderqueer',
       label: 'Genderqueer',
       bars: ['#B880DE', '#FFF', '#478318'],
