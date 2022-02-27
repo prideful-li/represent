@@ -16,7 +16,10 @@
 
     <div class="body">
       <form-field :field="`flag-type-${index}`" label="Flag Type">
-        <select :id="`flag-type-${index}`" v-model="selectedFlagTypeId" @change="flagSelected">
+        <select
+          :id="`flag-type-${index}`"
+          v-model="selectedFlagTypeId"
+          @change="flagSelected">
           <option disabled value="">Select a flag type</option>
           <option
             v-for="flagType in flagTypes"

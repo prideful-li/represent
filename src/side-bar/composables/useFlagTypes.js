@@ -165,7 +165,7 @@ export default function useFlagTypes() {
         '#FFF',
         '#FCA2C5',
         '#DB8AE3',
-        '#AB7EDD'
+        '#AB7EDD',
       ],
     },
     {
