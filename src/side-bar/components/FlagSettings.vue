@@ -52,6 +52,17 @@ const props = defineProps({
 const selectedFlagTypeId = ref('')
 const flagTypes = ref([
   {
+    id: 'abrosexual',
+    label: 'Abrosexual',
+    bars: [
+      '#77CC94',
+      '#B5E5CC',
+      '#FCFEFF',
+      '#E997B5',
+      '#DC406C',
+    ],
+  },
+  {
     id: 'aceflux',
     label: 'Aceflux',
     bars: [
