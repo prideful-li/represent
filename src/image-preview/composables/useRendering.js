@@ -26,7 +26,7 @@ export default function useRendering(context) {
     const tempContext = tempCanvas.getContext('2d')
 
     settings.flags.forEach((flag, flagIndex) => {
-      if (flag.id === 'bisexual') {
+      if (flag.id === 'bisexual' || flag.id === 'autoromantic') {
         const barHeight = flagHeight / 5
 
         tempContext.fillStyle = flag.bars[0]
@@ -47,7 +47,7 @@ export default function useRendering(context) {
           size,
           barHeight * 2
         )
-      } else if (flag.id === 'demisexual') {
+      } else if (flag.id === 'demisexual' || flag.id === 'demiromantic') {
         const barHeight = flagHeight / 6
 
         tempContext.fillStyle = flag.bars[1]

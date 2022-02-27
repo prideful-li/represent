@@ -23,9 +23,34 @@ export default function useFlagTypes() {
       bars: ['#FE007F', '#9832FF', '#00B8E7'],
     },
     {
+      id: 'angled-aroace',
+      label: 'Angled Aroace',
+      bars: ['#FBE32C', '#F5FFAC', '#EDECCC', '#120B06'],
+    },
+    {
+      id: 'aroaceflux',
+      label: 'Aroaceflux',
+      bars: ['#F8575D', '#FE7C85', '#FFCDE5', '#6B8FD5', '#3B3F94'],
+    },
+    {
+      id: 'aroflux',
+      label: 'Aroflux',
+      bars: ['#D5205C', '#EB736F', '#EFE6B0', '#A9D275', '#3CA648'],
+    },
+    {
       id: 'aromantic',
       label: 'Aromantic',
       bars: ['#3AA740', '#A8D47A', '#FFF', '#ABABAB', '#000'],
+    },
+    {
+      id: 'aromantic-asexual',
+      label: 'Aromantic Asexual',
+      bars: ['#E38D00', '#EDCE00', '#FFF', '#62B0DD', '#1A3555'],
+    },
+    {
+      id: 'aromantic-spectrum',
+      label: 'Aromantic Spectrum',
+      bars: ['#3F9F52', '#97CF7C', '#F2FCCF', '#186264', '#052127'],
     },
     {
       id: 'asexual',
@@ -33,8 +58,26 @@ export default function useFlagTypes() {
       bars: ['#000', '#A6A7A6', '#FFF', '#820082'],
     },
     {
+      id: 'autoromantic',
+      label: 'Autoromantic',
+      bars: ['#93D2E4', '#3EA442', '#7B7B7B'],
+    },
+    {
       id: 'bigender',
       label: 'Bigender',
+      bars: [
+        '#C67BA5',
+        '#EFA9CF',
+        '#D7C9EA',
+        '#FFF',
+        '#D7C9EA',
+        '#9CC9EA',
+        '#6D84D3',
+      ],
+    },
+    {
+      id: 'bigender-alt',
+      label: 'Bigender (Alternative)',
       bars: ['#ED78AB', '#FEF54D', '#FFF', '#AE6DBE', '#719EE3'],
     },
     {
@@ -59,6 +102,11 @@ export default function useFlagTypes() {
       id: 'ceterosexual',
       label: 'Ceterosexual',
       bars: ['#FCF980', '#169C47', '#FFF', '#000'],
+    },
+    {
+      id: 'cupioromantic',
+      label: 'Cupioromantic',
+      bars: ['#FCA9A3', '#FDC5C0', '#FFF', '#C8BFE6', '#A0A0A0'],
     },
     {
       id: 'demiboy',
@@ -130,7 +178,12 @@ export default function useFlagTypes() {
     {
       id: 'demisexual',
       label: 'Demisexual',
-      bars: ['#000', '#FFF', '#6f0071', '#d3d3d3'],
+      bars: ['#000', '#FFF', '#6f0071', '#D3D3D3'],
+    },
+    {
+      id: 'demiromantic',
+      label: 'Demiromantic',
+      bars: ['#000', '#FFF', '#3AA740', '#D3D3D3'],
     },
     {
       id: 'fraysexual',
@@ -187,6 +240,11 @@ export default function useFlagTypes() {
       ],
     },
     {
+      id: 'greyromantic',
+      label: 'Greyromantic',
+      bars: ['#2DA038', '#AFB2Af', '#FFF', '#AFB2Af', '#2DA038'],
+    },
+    {
       id: 'greysexual',
       label: 'Greysexual',
       bars: ['#740195', '#AEB2AA', '#FFF', '#AEB2AA', '#740195'],
@@ -221,14 +279,29 @@ export default function useFlagTypes() {
       bars: ['#D52800', '#FD9954', '#FFF', '#D261A4', '#A40061'],
     },
     {
+      id: 'lithromantic',
+      label: 'Lithromantic',
+      bars: ['#F14952', '#FF9E5E', '#FFF546', '#FFF', '#2A2A2A'],
+    },
+    {
       id: 'nonbinary',
       label: 'NonBinary',
       bars: ['#FEF32A', '#FEFEFE', '#9D57D2', '#000'],
     },
     {
+      id: 'neutrois',
+      label: 'Neutrois',
+      bars: ['#FFF', '#22B14C', '#000'],
+    },
+    {
       id: 'omnisexual',
       label: 'Omnisexual',
       bars: ['#FF9DCF', '#FF51C0', '#1A0042', '#675FFF', '#8EA9FF'],
+    },
+    {
+      id: 'oriented-aroace',
+      label: 'Oriented Aroace',
+      bars: ['#060634', '#81A5B8', '#FFF', '#2FB3A4'],
     },
     {
       id: 'pangender',
@@ -288,6 +361,16 @@ export default function useFlagTypes() {
         '#F4ABB8',
         '#FFF',
       ],
+    },
+    {
+      id: 'quoiromantic',
+      label: 'Quoiromantic',
+      bars: ['#000', '#FFF', '#98DC31', '#24D0E4'],
+    },
+    {
+      id: 'recipromantic',
+      label: 'Recipromantic',
+      bars: ['#E84671', '#F0B2DC', '#ADF6B2', '#FFF', '#000'],
     },
     {
       id: 'transgender',
