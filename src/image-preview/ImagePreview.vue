@@ -39,8 +39,8 @@ const canvasStyle = computed(() => {
     }
   }
 
-  const widthRatio = width.value / props.settings.width
   const heightRatio = height.value / props.settings.height
+  const widthRatio = width.value / props.settings.width
   const bestRatio = Math.min(widthRatio, heightRatio)
 
   return {
@@ -101,6 +101,7 @@ watch(props.settings, (newSettings) => {
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container canvas {
