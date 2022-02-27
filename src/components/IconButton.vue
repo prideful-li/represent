@@ -1,5 +1,8 @@
 <template>
-  <button :class="type">
+  <button 
+    :aria-label="label"
+    :class="type"
+    :title="label">
     <slot></slot>
   </button>
 </template>
@@ -8,7 +11,8 @@
 import { defineProps } from 'vue'
 
 defineProps({
-  type: String
+  label: String,
+  type: String,
 })
 </script>
 
@@ -38,8 +42,8 @@ button.primary {
 }
 
 button.primary:focus, button.primary:active, button.primary:hover {
-  background: #F06595;
-  border-color: #F06595;
+  background: #F389AD;
+  border-color: #F389AD;
 }
 
 button.secondary {

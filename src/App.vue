@@ -18,7 +18,7 @@ import ImagePreview from './image-preview/ImagePreview.vue'
 const settings = reactive({
   width: 0,
   height: 0,
-  flags: []
+  flags: [],
 })
 
 function onSettingChanged(value) {

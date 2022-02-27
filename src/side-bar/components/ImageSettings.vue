@@ -30,7 +30,7 @@ const emit = defineEmits(['change'])
 function onFieldChanged(field, value) {
   emit('change', {
     field,
-    value: typeof value === 'number' ? value : parseInt(value)
+    value: typeof value === 'number' ? value : parseInt(value),
   })
 }
 

@@ -3,12 +3,14 @@
     <h1>
       <span>Settings</span>
       <icon-button 
+        label="View source code"
         type="secondary"
         @click="viewCode">
 
         <code-icon
             color="#FFF"
             height="16px"
+            label="View source code"
             width="16px" />
 
       </icon-button>  
@@ -20,12 +22,14 @@
       <h2>
         <span>Flags</span>
         <icon-button
+          label="Add flag"
           type="secondary"
           @click="addFlag">
 
           <add-icon
             color="#FFF"
             height="16px"
+            label="Add flag"
             width="16px" />
 
         </icon-button>
@@ -44,12 +48,14 @@
 
     <div class="footer">
       <icon-button
+        label="Save background"
         type="primary"
         @click="$emit('save')">
 
         <download-icon
           color="#FFF"
           height="16px"
+          label="Save background"
           width="16px" />
 
       </icon-button>
@@ -67,6 +73,8 @@ import IconButton from '../components/IconButton.vue'
 import FlagSettings from './components/FlagSettings.vue'
 import ImageSettings from './components/ImageSettings.vue'
 
+const emit = defineEmits(['change', 'save'])
+
 function viewCode() {
   window.open('https://git.nicholemattera.com/NicholeMattera/Pride-Background-Generator', '_blank')
 }
@@ -74,10 +82,10 @@ function viewCode() {
 const settings = reactive({
   width: 0,
   height: 0,
-  flags: []
+  flags: [],
 })
+emit('change', settings)
 
-const emit = defineEmits(['change', 'save'])
 function onFieldChanged({ field, value }) {
   settings[field] = value
   emit('change', settings)
@@ -87,7 +95,7 @@ function addFlag() {
   settings.flags.push({
     id: '',
     label: '',
-    bars: []
+    bars: [],
   })
   emit('change', settings)
 }
@@ -101,8 +109,6 @@ function removeFlag(index) {
   settings.flags = settings.flags.filter((e, i) => i != index)
   emit('change', settings)
 }
-
-emit('change', settings)
 </script>
 
 <style scoped>
