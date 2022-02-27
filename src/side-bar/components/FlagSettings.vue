@@ -293,6 +293,15 @@ const flagTypes = ref([
     ],
   },
   {
+    id: 'intersex',
+    label: 'Intersex',
+    bars: [
+      '#FFD900',
+      '#7A00AC',
+      '#FFD900',
+    ],
+  },
+  {
     id: 'lesbian',
     label: 'Lesbian',
     bars: [

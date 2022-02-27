@@ -67,7 +67,18 @@ function renderPreview(settings) {
   const tempContext = tempCanvas.getContext('2d')
 
   settings.flags.forEach((flag, flagIndex) => {
-    if (flag.id === 'demisexual') {
+    if (flag.id === 'bisexual') {
+      const barHeight = flagHeight / 5
+
+      tempContext.fillStyle = flag.bars[0]
+      tempContext.fillRect(0, flagHeight * flagIndex, size, barHeight * 2)
+
+      tempContext.fillStyle = flag.bars[1]
+      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 2), size, barHeight)
+
+      tempContext.fillStyle = flag.bars[2]
+      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 3), size, barHeight * 2)
+    } else if (flag.id === 'demisexual') {
       const barHeight = flagHeight / 6
 
       tempContext.fillStyle = flag.bars[1]
@@ -85,17 +96,18 @@ function renderPreview(settings) {
       tempContext.lineTo(flagHeight * 0.5, (flagHeight * flagIndex) + (barHeight * 3))
       tempContext.lineTo(0, (flagHeight * flagIndex) + flagHeight)
       tempContext.fill()
-    } else if (flag.id === 'bisexual') {
-      const barHeight = flagHeight / 5
-
+    } else if (flag.id === 'intersex') {
       tempContext.fillStyle = flag.bars[0]
-      tempContext.fillRect(0, flagHeight * flagIndex, size, barHeight * 2)
+      tempContext.fillRect(0, flagHeight * flagIndex, size, flagHeight)
 
-      tempContext.fillStyle = flag.bars[1]
-      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 2), size, barHeight)
-
+      tempContext.save()
+      tempContext.strokeStyle = flag.bars[1]
       tempContext.fillStyle = flag.bars[2]
-      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 3), size, barHeight * 2)
+      tempContext.lineWidth = flagHeight * 0.1
+      tempContext.arc(size / 2, (flagHeight * flagIndex) + (flagHeight / 2), flagHeight * 0.1875, 0, 2 * Math.PI)
+      tempContext.fill()
+      tempContext.stroke()
+      tempContext.restore()
     } else {
       const barHeight = flagHeight / flag.bars.length
       flag.bars.forEach((bar, barIndex) => {
