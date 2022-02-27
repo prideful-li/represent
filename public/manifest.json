@@ -1,0 +1,27 @@
+{
+  "short_name": "PrideBGs",
+  "name": "Pride Background Generator",
+  "icons": [
+    {
+      "src": "/images/icon-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html"
+}
