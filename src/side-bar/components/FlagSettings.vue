@@ -16,8 +16,8 @@
 
     <div class="body">
       <form-field :field="`flag-type-${index}`" label="Flag Type">
-        <select :id="`flag-type-${index}`" @change="flagSelected">
-          <option disabled selected value="">Select a flag type</option>
+        <select :id="`flag-type-${index}`" v-model="selectedFlagTypeId" @change="flagSelected">
+          <option disabled value="">Select a flag type</option>
           <option
             v-for="flagType in flagTypes"
             :key="flagType.id"
@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-  import { defineEmits, defineProps } from 'vue'
+  import { defineEmits, defineProps, ref } from 'vue'
   import FormField from '../../components/FormField.vue'
   import IconButton from '../../components/IconButton.vue'
   import RemoveIcon from '../../components/RemoveIcon.vue'
@@ -43,6 +43,7 @@
 
   const emit = defineEmits(['change', 'remove'])
 
+  const selectedFlagTypeId = ref('')
   const flagTypes = useFlagTypes()
 
   function flagSelected(event) {
