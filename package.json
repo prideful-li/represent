@@ -1,6 +1,13 @@
 {
   "name": "pride-background",
   "version": "0.1.0",
+  "author": "Nichole Mattera",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.nicholemattera.com/NicholeMattera/Pride-Background-Generator.git"
+  },
+  "homepage": "https://pride.nicholemattera.gay",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
