@@ -11,11 +11,13 @@
 </template>
 
 <script setup>
-import { computed, defineProps, reactive, ref, watch } from 'vue'
+import { computed, defineEmits, defineProps, reactive, ref, watch } from 'vue'
 
 const props = defineProps({
   settings: Object
 })
+
+const emit = defineEmits(['ready'])
 
 const container = ref(null)
 const height = ref(0)
@@ -49,7 +51,47 @@ const canvasStyle = computed(() => {
 })
 
 const canvas = ref(null)
-//canvas.value.getContext('2d')
+let context = ref(null)
+
+function renderPreview(settings) {
+  if (!context.value) return
+
+  const size = Math.sqrt(Math.pow(settings.width, 2) + Math.pow(settings.height, 2))
+  const flagHeight = size / settings.flags.filter((flag) => flag.id !== '').length
+  
+  const tempCanvas = document.createElement('canvas')
+  tempCanvas.height = size
+  tempCanvas.width = size
+
+  const tempContext = tempCanvas.getContext('2d')
+
+  settings.flags.forEach((flag, flagIndex) => {
+    const barHeight = flagHeight / flag.bars.length
+    flag.bars.forEach((bar, barIndex) => {
+      tempContext.fillStyle = bar
+      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * barIndex), size, barHeight)
+    })
+  })
+
+  context.value.clearRect(0, 0, settings.width, settings.height)
+
+  context.value.save()
+  context.value.translate(settings.width / 2, settings.height / 2)
+  context.value.rotate(-Math.PI / 4)
+  context.value.translate(-size / 2, -size / 2)
+  context.value.drawImage(tempCanvas, 0, 0)
+  context.value.restore()
+}
+
+watch(canvas, (newCanvas) => {
+  context.value = newCanvas.getContext('2d')
+  renderPreview(props.settings)
+  emit('ready', newCanvas)
+})
+
+watch(props.settings, (newSettings) => {
+  renderPreview(newSettings)
+})
 </script>
 
 <style scoped>

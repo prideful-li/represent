@@ -77,7 +77,7 @@ const settings = reactive({
   flags: []
 })
 
-const emit = defineEmits(['change','save'])
+const emit = defineEmits(['change', 'save'])
 function onFieldChanged({ field, value }) {
   settings[field] = value
   emit('change', settings)

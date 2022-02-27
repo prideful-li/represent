@@ -1,12 +1,16 @@
 <template>
   <div class="app">
-    <SideBar @change="onSettingChanged" />
-    <ImagePreview :settings="settings" />
+    <SideBar
+      @change="onSettingChanged"
+      @save="onSave" />
+    <ImagePreview
+      :settings="settings"
+      @ready="onReady" />
   </div>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
 import SideBar from './side-bar/SideBar.vue'
 import ImagePreview from './image-preview/ImagePreview.vue'
@@ -21,6 +25,18 @@ function onSettingChanged(value) {
   settings.width = value.width
   settings.height = value.height
   settings.flags = value.flags
+}
+
+const canvas = ref(null)
+function onReady(c) {
+  canvas.value = c
+}
+
+function onSave() {
+  const anchor = document.createElement('a')
+  anchor.download = `pride-${Date.now()}.png`
+  anchor.href = canvas.value.toDataURL('image/png')
+  anchor.click()
 }
 </script>
 
