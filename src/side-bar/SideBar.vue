@@ -70,7 +70,13 @@
   const settings = reactive({
     width: 0,
     height: 0,
-    flags: [],
+    flags: [
+      {
+        id: '',
+        label: '',
+        bars: [],
+      },
+    ],
   })
   emit('change', settings)
 
