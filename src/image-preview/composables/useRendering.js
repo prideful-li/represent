@@ -26,7 +26,43 @@ export default function useRendering(context) {
     const tempContext = tempCanvas.getContext('2d')
 
     settings.flags.forEach((flag, flagIndex) => {
-      if (flag.id === 'bisexual' || flag.id === 'autoromantic') {
+      if (flag.id === 'ally') {
+        const barHeight = flagHeight / 6
+
+        for (let barIndex = 0; barIndex < 6; barIndex++) {
+          tempContext.fillStyle = flag.bars[barIndex]
+          tempContext.fillRect(
+            0,
+            flagHeight * flagIndex + barHeight * barIndex,
+            size,
+            barHeight
+          )
+        }
+
+        tempContext.save()
+
+        tempContext.beginPath()
+        tempContext.moveTo(0, flagHeight * (flagIndex + 1))
+        tempContext.lineTo(size / 2, flagHeight * flagIndex)
+        tempContext.lineTo(size, flagHeight * (flagIndex + 1))
+        tempContext.lineTo(size - size / 3, flagHeight * (flagIndex + 1))
+        tempContext.lineTo(size / 2, flagHeight * flagIndex + barHeight * 4)
+        tempContext.lineTo(size / 3, flagHeight * (flagIndex + 1))
+        tempContext.closePath()
+        tempContext.clip()
+
+        for (let barIndex = 0; barIndex < 6; barIndex++) {
+          tempContext.fillStyle = flag.bars[barIndex + 6]
+          tempContext.fillRect(
+            0,
+            flagHeight * flagIndex + barHeight * barIndex,
+            size,
+            barHeight
+          )
+        }
+
+        tempContext.restore()
+      } else if (flag.id === 'bisexual' || flag.id === 'autoromantic') {
         const barHeight = flagHeight / 5
 
         tempContext.fillStyle = flag.bars[0]
