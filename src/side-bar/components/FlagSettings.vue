@@ -162,6 +162,19 @@ const flagTypes = ref([
     ],
   },
   {
+    id: 'demiflux',
+    label: 'Demiflux',
+    bars: [
+      '#7F7F7F',
+      '#DADADA',
+      '#FFB6B8',
+      '#F4F691',
+      '#9AD9EB',
+      '#DADADA',
+      '#7F7F7F',
+    ],
+  },
+  {
     id: 'demigender',
     label: 'Demigender',
     bars: [
@@ -183,6 +196,21 @@ const flagTypes = ref([
       '#FFAEC9',
       '#FFF',
       '#FFAEC9',
+      '#C4C4C4',
+      '#7F7F7F',
+    ],
+  },
+  {
+    id: 'demigirlflux',
+    label: 'Demigirlflux',
+    bars: [
+      '#7F7F7F',
+      '#C4C4C4',
+      '#A24AA3',
+      '#FEAFC9',
+      '#FFF',
+      '#FEAFC9',
+      '#A24AA3',
       '#C4C4C4',
       '#7F7F7F',
     ],
