@@ -126,6 +126,19 @@ const flagTypes = ref([
     ],
   },
   {
+    id: 'boyflux',
+    label: 'Boyflux',
+    bars: [
+      '#D7E9F8',
+      '#6FACF5',
+      '#023670',
+      '#9EEDAC',
+      '#023670',
+      '#6FACF5',
+      '#D7E9F8',
+    ],
+  },
+  {
     id: 'ceterosexual',
     label: 'Ceterosexual',
     bars: [
@@ -225,6 +238,19 @@ const flagTypes = ref([
       '#B880DE',
       '#FFF',
       '#478318',
+    ],
+  },
+  {
+    id: 'girlflux',
+    label: 'Girlflux',
+    bars: [
+      '#F8E6D8',
+      '#F1526D',
+      '#BF0310',
+      '#E8C586',
+      '#BF0310',
+      '#F1526D',
+      '#F8E6D8',
     ],
   },
   {
