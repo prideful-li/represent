@@ -16,15 +16,15 @@
 
     <div class="body">
       <form-field :field="`flag-type-${index}`" label="Flag Type">
-        <select
-          :id="`flag-type-${index}`"
-          v-model="selectedFlagTypeId"
-          @change="flagSelected">
-          <option disabled value="">Select a flag type</option>
+        <select :id="`flag-type-${index}`" @change="flagSelected">
+          <option disabled value="" :selected="selectedFlagTypeId === ''">
+            Select a flag type
+          </option>
           <option
             v-for="flagType in flagTypes"
             :key="flagType.id"
-            :value="flagType.id">
+            :value="flagType.id"
+            :selected="selectedFlagTypeId === flagType.id">
             {{ flagType.label }}
           </option>
         </select>
@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-  import { defineEmits, defineProps, ref } from 'vue'
+  import { defineEmits, defineProps } from 'vue'
   import FormField from '../../components/FormField.vue'
   import IconButton from '../../components/IconButton.vue'
   import RemoveIcon from '../../components/RemoveIcon.vue'
@@ -42,11 +42,11 @@
 
   const props = defineProps({
     index: Number,
+    selectedFlagTypeId: String,
   })
 
   const emit = defineEmits(['change', 'remove'])
 
-  const selectedFlagTypeId = ref('')
   const flagTypes = useFlagTypes()
 
   function flagSelected(event) {

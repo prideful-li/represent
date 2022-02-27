@@ -27,6 +27,7 @@
         :key="index">
         <flag-settings
           :index="index"
+          :selected-flag-type-id="flag.id"
           @change="changedFlag"
           @remove="removeFlag(index)" />
       </div>
