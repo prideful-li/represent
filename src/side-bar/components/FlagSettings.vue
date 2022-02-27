@@ -175,6 +175,16 @@ const flagTypes = ref([
     ],
   },
   {
+    id: 'demisexual',
+    label: 'Demisexual',
+    bars: [
+      '#000',
+      '#FFF',
+      '#6f0071',
+      '#d3d3d3',
+    ],
+  },
+  {
     id: 'fraysexual',
     label: 'Fraysexual',
     bars: [

@@ -67,11 +67,30 @@ function renderPreview(settings) {
   const tempContext = tempCanvas.getContext('2d')
 
   settings.flags.forEach((flag, flagIndex) => {
-    const barHeight = flagHeight / flag.bars.length
-    flag.bars.forEach((bar, barIndex) => {
-      tempContext.fillStyle = bar
-      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * barIndex), size, barHeight)
-    })
+    if (flag.id === 'demisexual') {
+      const barHeight = flagHeight / 6
+      tempContext.fillStyle = flag.bars[1]
+      tempContext.fillRect(0, flagHeight * flagIndex, size, barHeight * 2.5)
+
+      tempContext.fillStyle = flag.bars[2]
+      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 2.5), size, barHeight)
+
+      tempContext.fillStyle = flag.bars[3]
+      tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * 3.5), size, barHeight * 2.5)
+
+      tempContext.fillStyle = flag.bars[0]
+      tempContext.beginPath()
+      tempContext.moveTo(0, flagHeight * flagIndex)
+      tempContext.lineTo(flagHeight * 0.5, (flagHeight * flagIndex) + (barHeight * 3))
+      tempContext.lineTo(0, (flagHeight * flagIndex) + flagHeight)
+      tempContext.fill()
+    } else {
+      const barHeight = flagHeight / flag.bars.length
+      flag.bars.forEach((bar, barIndex) => {
+        tempContext.fillStyle = bar
+        tempContext.fillRect(0, (flagHeight * flagIndex) + (barHeight * barIndex), size, barHeight)
+      })
+    }
   })
 
   context.value.clearRect(0, 0, settings.width, settings.height)
