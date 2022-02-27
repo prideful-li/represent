@@ -75,6 +75,7 @@ export default function useRendering(context) {
         tempContext.strokeStyle = flag.bars[1]
         tempContext.fillStyle = flag.bars[2]
         tempContext.lineWidth = flagHeight * 0.1
+        tempContext.beginPath()
         tempContext.arc(
           size / 2,
           flagHeight * flagIndex + flagHeight / 2,
@@ -82,6 +83,7 @@ export default function useRendering(context) {
           0,
           2 * Math.PI
         )
+        tempContext.closePath()
         tempContext.fill()
         tempContext.stroke()
         tempContext.restore()
