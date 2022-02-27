@@ -4,43 +4,52 @@
     ref="container">
     <canvas
       :height="settings.height"
+      ref="canvas"
       :style="canvasStyle"
       :width="settings.width" />
   </div>
 </template>
 
 <script setup>
-import { computed, defineProps, ref } from 'vue'
-import { useElementSize } from '@vueuse/core'
+import { computed, defineProps, reactive, ref, watch } from 'vue'
 
 const props = defineProps({
   settings: Object
 })
 
 const container = ref(null)
-const { width: containerWidth, height: containerHeight } = useElementSize(container)
+const height = ref(0)
+const width = ref(0)
+const resizeObserver = reactive(new ResizeObserver(() => {
+  height.value = container.value.clientHeight
+  width.value = container.value.clientWidth
+}))
+watch(container, (newContainer) => {
+  resizeObserver.observe(newContainer)
+})
 
 const canvasStyle = computed(() => {
-  if (props.settings.height <= containerHeight.value && props.settings.width <= containerWidth.value) {
+  if (props.settings.height <= height.value && props.settings.width <= width.value) {
     return {
       background: '#000',
       height: `${props.settings.height}px`,
       width: `${props.settings.width}px`,
     }
-  } else if (props.settings.height > containerHeight.value) {
-    return {
-      background: '#000',
-      height: `${containerHeight.value}px`,
-      width: `${props.settings.width * containerHeight.value / props.settings.height}px`
-    }
   }
+
+  const widthRatio = width.value / props.settings.width
+  const heightRatio = height.value / props.settings.height
+  const bestRatio = Math.min(widthRatio, heightRatio)
 
   return {
     background: '#000',
-    height: `${props.settings.height * containerWidth.value / props.settings.width}px`,
-    width: `${containerWidth.value}px`
+    height: `${props.settings.height * bestRatio}px`,
+    width: `${props.settings.width * bestRatio}px`
   }
 })
+
+const canvas = ref(null)
+//canvas.value.getContext('2d')
 </script>
 
 <style scoped>
