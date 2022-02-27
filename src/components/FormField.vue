@@ -8,21 +8,21 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+  import { defineProps } from 'vue'
 
-defineProps({
-  field: String,
-  label: String,
-})
+  defineProps({
+    field: String,
+    label: String,
+  })
 </script>
 
 <style scoped>
-.field {
-  margin: 0 0 16px;
-}
+  .field {
+    margin: 0 0 16px;
+  }
 
-.field label {
-  margin-bottom: 8px;
-  font-weight: 600;
-}
+  .field label {
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
 </style>

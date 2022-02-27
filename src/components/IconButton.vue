@@ -1,57 +1,60 @@
 <template>
-  <button 
-    :aria-label="label"
-    :class="type"
-    :title="label">
+  <button :aria-label="label" :class="type" :title="label">
     <slot></slot>
   </button>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+  import { defineProps } from 'vue'
 
-defineProps({
-  label: String,
-  type: String,
-})
+  defineProps({
+    label: String,
+    type: String,
+  })
 </script>
 
 <style scoped>
-button {
-  align-items: center;
-  border-radius: 3px;
-  background: transparent;
-  display: flex;
-  height: 28px;
-  justify-content: center;
-  width: 28px;
-}
+  button {
+    align-items: center;
+    border-radius: 3px;
+    background: transparent;
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    width: 28px;
+  }
 
-button:focus, button:active, button:hover {
-  outline: none;
-}
+  button:focus,
+  button:active,
+  button:hover {
+    outline: none;
+  }
 
-button:hover {
-  cursor: pointer;
-}
+  button:hover {
+    cursor: pointer;
+  }
 
-button.primary {
-  background: #EC407A;
-  border: 2px solid #EC407A;
-  color: #FFF;
-}
+  button.primary {
+    background: #ec407a;
+    border: 2px solid #ec407a;
+    color: #fff;
+  }
 
-button.primary:focus, button.primary:active, button.primary:hover {
-  background: #F389AD;
-  border-color: #F389AD;
-}
+  button.primary:focus,
+  button.primary:active,
+  button.primary:hover {
+    background: #f389ad;
+    border-color: #f389ad;
+  }
 
-button.secondary {
-  border: 2px solid #FFF;
-  color: #FFF;
-}
+  button.secondary {
+    border: 2px solid #fff;
+    color: #fff;
+  }
 
-button.secondary:focus, button.secondary:active, button.secondary:hover {
-  border-color: #EC407A;
-}
+  button.secondary:focus,
+  button.secondary:active,
+  button.secondary:hover {
+    border-color: #ec407a;
+  }
 </style>

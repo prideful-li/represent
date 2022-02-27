@@ -16,12 +16,12 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+  import { defineProps } from 'vue'
 
-defineProps({
-  color: String,
-  height: String,
-  label: String,
-  width: String,
-})
+  defineProps({
+    color: String,
+    height: String,
+    label: String,
+    width: String,
+  })
 </script>

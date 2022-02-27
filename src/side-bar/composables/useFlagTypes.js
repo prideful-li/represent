@@ -5,87 +5,42 @@ export default function useFlagTypes() {
     {
       id: 'abrosexual',
       label: 'Abrosexual',
-      bars: [
-        '#77CC94',
-        '#B5E5CC',
-        '#FCFEFF',
-        '#E997B5',
-        '#DC406C',
-      ],
+      bars: ['#77CC94', '#B5E5CC', '#FCFEFF', '#E997B5', '#DC406C'],
     },
     {
       id: 'aceflux',
       label: 'Aceflux',
-      bars: [
-        '#C82067',
-        '#BCC5C6',
-        '#EC6D87',
-        '#91479B',
-        '#800080',
-      ],
+      bars: ['#C82067', '#BCC5C6', '#EC6D87', '#91479B', '#800080'],
     },
     {
       id: 'agender',
       label: 'Agender',
-      bars: [
-        '#000',
-        '#BCC5C6',
-        '#FFF',
-        '#B5F582',
-        '#FFF',
-        '#BCC5C6',
-        '#000',
-      ],
+      bars: ['#000', '#BCC5C6', '#FFF', '#B5F582', '#FFF', '#BCC5C6', '#000'],
     },
     {
       id: 'androgyne',
       label: 'Androgyne',
-      bars: [
-        '#FE007F',
-        '#9832FF',
-        '#00B8E7',
-      ],
+      bars: ['#FE007F', '#9832FF', '#00B8E7'],
     },
     {
       id: 'aromantic',
       label: 'Aromantic',
-      bars: [
-        '#3AA740',
-        '#A8D47A',
-        '#FFF',
-        '#ABABAB',
-        '#000',
-      ],
+      bars: ['#3AA740', '#A8D47A', '#FFF', '#ABABAB', '#000'],
     },
     {
       id: 'asexual',
       label: 'Asexual',
-      bars: [
-        '#000',
-        '#A6A7A6',
-        '#FFF',
-        '#820082',
-      ],
+      bars: ['#000', '#A6A7A6', '#FFF', '#820082'],
     },
     {
       id: 'bigender',
       label: 'Bigender',
-      bars: [
-        '#ED78AB',
-        '#FEF54D',
-        '#FFF',
-        '#AE6DBE',
-        '#719EE3',
-      ],
+      bars: ['#ED78AB', '#FEF54D', '#FFF', '#AE6DBE', '#719EE3'],
     },
     {
       id: 'bisexual',
       label: 'Bisexual',
-      bars: [
-        '#D80071',
-        '#744E96',
-        '#0035A9',
-      ],
+      bars: ['#D80071', '#744E96', '#0035A9'],
     },
     {
       id: 'boyflux',
@@ -103,12 +58,7 @@ export default function useFlagTypes() {
     {
       id: 'ceterosexual',
       label: 'Ceterosexual',
-      bars: [
-        '#FCF980',
-        '#169C47',
-        '#FFF',
-        '#000',
-      ],
+      bars: ['#FCF980', '#169C47', '#FFF', '#000'],
     },
     {
       id: 'demiboy',
@@ -180,22 +130,12 @@ export default function useFlagTypes() {
     {
       id: 'demisexual',
       label: 'Demisexual',
-      bars: [
-        '#000',
-        '#FFF',
-        '#6f0071',
-        '#d3d3d3',
-      ],
+      bars: ['#000', '#FFF', '#6f0071', '#d3d3d3'],
     },
     {
       id: 'fraysexual',
       label: 'Fraysexual',
-      bars: [
-        '#226CB5',
-        '#93E7DD',
-        '#FFF',
-        '#636363',
-      ],
+      bars: ['#226CB5', '#93E7DD', '#FFF', '#636363'],
     },
     {
       id: 'mlm',
@@ -213,22 +153,12 @@ export default function useFlagTypes() {
     {
       id: 'genderfluid',
       label: 'Genderfluid',
-      bars: [
-        '#FF77A5',
-        '#F5F5F5',
-        '#C009D8',
-        '#232323',
-        '#2C39BF',
-      ],
+      bars: ['#FF77A5', '#F5F5F5', '#C009D8', '#232323', '#2C39BF'],
     },
     {
       id: 'genderqueer',
       label: 'Genderqueer',
-      bars: [
-        '#B880DE',
-        '#FFF',
-        '#478318',
-      ],
+      bars: ['#B880DE', '#FFF', '#478318'],
     },
     {
       id: 'girlflux',
@@ -246,54 +176,27 @@ export default function useFlagTypes() {
     {
       id: 'greysexual',
       label: 'Greysexual',
-      bars: [
-        '#740195',
-        '#AEB2AA',
-        '#FFF',
-        '#AEB2AA',
-        '#740195',
-      ],
+      bars: ['#740195', '#AEB2AA', '#FFF', '#AEB2AA', '#740195'],
     },
     {
       id: 'intersex',
       label: 'Intersex',
-      bars: [
-        '#FFD900',
-        '#7A00AC',
-        '#FFD900',
-      ],
+      bars: ['#FFD900', '#7A00AC', '#FFD900'],
     },
     {
       id: 'lesbian',
       label: 'Lesbian',
-      bars: [
-        '#D52800',
-        '#FD9954',
-        '#FFF',
-        '#D261A4',
-        '#A40061',
-      ],
+      bars: ['#D52800', '#FD9954', '#FFF', '#D261A4', '#A40061'],
     },
     {
       id: 'nonbinary',
       label: 'NonBinary',
-      bars: [
-        '#FEF32A',
-        '#FEFEFE',
-        '#9D57D2',
-        '#000',
-      ],
+      bars: ['#FEF32A', '#FEFEFE', '#9D57D2', '#000'],
     },
     {
       id: 'omnisexual',
       label: 'Omnisexual',
-      bars: [
-        '#FF9DCF',
-        '#FF51C0',
-        '#1A0042',
-        '#675FFF',
-        '#8EA9FF',
-      ],
+      bars: ['#FF9DCF', '#FF51C0', '#1A0042', '#675FFF', '#8EA9FF'],
     },
     {
       id: 'pangender',
@@ -311,20 +214,12 @@ export default function useFlagTypes() {
     {
       id: 'pansexual',
       label: 'Pansexual',
-      bars: [
-        '#FF148E',
-        '#FFDA00',
-        '#14B5FF',
-      ],
+      bars: ['#FF148E', '#FFDA00', '#14B5FF'],
     },
     {
       id: 'polysexual',
       label: 'Polysexual',
-      bars: [
-        '#F614BA',
-        '#00D769',
-        '#1593F5',
-      ],
+      bars: ['#F614BA', '#00D769', '#1593F5'],
     },
     {
       id: 'philadelphia-pride',
@@ -343,36 +238,17 @@ export default function useFlagTypes() {
     {
       id: 'pride',
       label: 'Pride',
-      bars: [
-        '#E60000',
-        '#FF8E00',
-        '#FFEF00',
-        '#00821B',
-        '#004BFF',
-        '#770089',
-      ],
+      bars: ['#E60000', '#FF8E00', '#FFEF00', '#00821B', '#004BFF', '#770089'],
     },
     {
       id: 'transgender',
       label: 'Transgender',
-      bars: [
-        '#5CCFFA',
-        '#F4ABB8',
-        '#FFF',
-        '#F4ABB8',
-        '#5CCFFA',
-      ],
+      bars: ['#5CCFFA', '#F4ABB8', '#FFF', '#F4ABB8', '#5CCFFA'],
     },
     {
       id: 'trigender',
       label: 'Trigender',
-      bars: [
-        '#FF95C4',
-        '#9580FF',
-        '#6AD969',
-        '#9580FF',
-        '#FF95C4',
-      ],
+      bars: ['#FF95C4', '#9580FF', '#6AD969', '#9580FF', '#FF95C4'],
     },
   ])
 }
