@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-  import { defineEmits, reactive } from 'vue'
+  import { reactive } from 'vue'
 
   import AddIcon from '../components/AddIcon.vue'
   import CodeIcon from '../components/CodeIcon.vue'

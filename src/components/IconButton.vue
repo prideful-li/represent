@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-  import { defineProps } from 'vue'
-
   defineProps({
     label: String,
     type: String,

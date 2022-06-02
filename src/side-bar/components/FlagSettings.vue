@@ -34,7 +34,6 @@
 </template>
 
 <script setup>
-  import { defineEmits, defineProps } from 'vue'
   import FormField from '../../components/FormField.vue'
   import IconButton from '../../components/IconButton.vue'
   import RemoveIcon from '../../components/RemoveIcon.vue'
